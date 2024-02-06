@@ -36,15 +36,18 @@ while ($nombreGuess != $nombre3chiffres){
 echo "<br>", "Essais : ", $compteur, " Nombre : ", $nombreGuess, ", ", $nombre3chiffres;
 echo "<br>";
 $j = 0;
-while($j <= 10){
-    echo $j, " ";
-    $j++;
-}
-echo "<br>";
-$j = 10;
-while($j >= 0){
-    echo $j, " ";
-    $j--;
+$jb = false;
+for($i = 0; $i < 21; $i++){
+    if ($jb == false){
+        echo $j, " ";
+        $j++;
+        if ($j == 10){
+            $jb = true;
+        }
+    }else if($jb == true){
+        echo $j, " ";
+        $j--;
+    }
 }
 ?>
 </body>

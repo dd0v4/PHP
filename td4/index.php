@@ -8,15 +8,15 @@
 <body>
 <?php
 
-function printLines(int $lines) : str{
-    for($i = 0; $i < $lines; $i++){
+function printLines(int $lines){
+    for($i = 1; $i <= $lines; $i++){
         echo str_repeat($i, $i);
         echo "<br>";
     }
 }
 
 function absoluteNumber(int $number): int {
-    return abs($number);
+    return ($number > 0) ? $number : -$number;
 }
 
 function biggerValue(array $array): int{
@@ -45,19 +45,19 @@ function letterApparitions(string $string, string $character) : int{
 } 
 
 function isPrime(int $number): bool{
+    $divcount = 0;
     for($i = 2; $i < $number; $i++){
         if($number % $i == 0){
-            $divcount++;
+            return FALSE;
         }
     }
 
     if ($divcount == 0){
         return TRUE;
-    }else{
-        return FALSE;
-    } 
+    }
 }
 
+echo absoluteNumber(-3);
 
 ?>
 </body>

@@ -10,7 +10,7 @@ if(isset($_POST["emailin"])){
 }
 
 if(isset($_POST["nomin"])){
-    $regex = "/^[a-zA-Z]/";
+    $regex = "/^[a-zA-Z]|[a-zA-Z]+\-[a-zA-Z]/";
 
     if (preg_match($regex, $_POST["nomin"])){
         echo "<p>Valide.</p>";
@@ -19,7 +19,7 @@ if(isset($_POST["nomin"])){
     }
 }
 if(isset($_POST["prenomin"])){
-    $regex = "/^[a-zA-Z]/";
+    $regex = "/^[a-zA-Z]{2,}|[a-zA-Z]{2,}+\-[a-zA-Z]{2,}/";
 
     if (preg_match($regex, $_POST["prenomin"])){
         echo "<p>Valide.</p>";
@@ -28,7 +28,7 @@ if(isset($_POST["prenomin"])){
     }
 }
 if(isset($_POST["numeroin"])){
-    $regex = "/^[0-9]/";
+    $regex = "/^[0-9]*$|^\+33[0-9]{9,}*$|^06[0-9]{8,}*$|^07[0-9]{8,}*$/";
 
     if (preg_match($regex, $_POST["numeroin"])){
         echo "<p>Valide.</p>";
